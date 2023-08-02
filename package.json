@@ -11,6 +11,7 @@
     "axios": "^1.4.0",
     "core-js": "^3.6.5",
     "element-ui": "^2.15.12",
+    "fuse.js": "^6.4.3",
     "js-cookie": "^3.0.5",
     "jsencrypt": "^3.3.2",
     "node-sass": "^8.0.0",

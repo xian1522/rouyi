@@ -3,17 +3,30 @@
     <hamburger id="hamburger-container" :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" />
     <breadcrumb id="breadcrumb-container" class="breadcrumb-container" v-if="!topNav"/>
     <!-- <top-nav id="topmenu-container" class="topmenu-container" v-if="topNav"/> -->
+    <div class="right-menu">
+      <search id="header-search" class="right-menu-item" />
+      <el-tooltip content="源码地址" effect="dark" placement="bottom">
+         <rou-yi-git id="rouyi-git" class="right-menu-item hover-effect"></rou-yi-git>
+      </el-tooltip>
+      <el-tooltip content="文档地址" effect="dark" placement="bottom">
+         <rou-yi-doc id="rouyi-doc" class="right-menu-item hover-effect"></rou-yi-doc>
+      </el-tooltip>
+    </div>
   </div>
 </template>
 
 <script>
 import Hamburger from '@/components/Hamburger'
 import Breadcrumb from '@/components/Breadcrumb'
-import TopNav from '@/components/TopNav'
+// import TopNav from '@/components/TopNav'
+import RouYiGit from '@/components/RouYi/Git'
+import RouYiDoc from '@/components/RouYi/Doc'
+import Search from '@/components/HeaderSearch'
+
 
 import { mapGetters } from 'vuex'
 export default {
-    components: {Hamburger, Breadcrumb},
+    components: {Hamburger, Breadcrumb,RouYiGit,RouYiDoc,Search},
     computed: {
         ...mapGetters([
             'sidebar'
