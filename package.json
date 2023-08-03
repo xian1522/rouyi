@@ -15,6 +15,7 @@
     "js-cookie": "^3.0.5",
     "jsencrypt": "^3.3.2",
     "node-sass": "^8.0.0",
+    "screenfull": "^5.0.2",
     "vue": "^2.6.11",
     "vue-meta": "^2.4.0",
     "vue-router": "^3.4.9",

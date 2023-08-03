@@ -11,6 +11,24 @@
       <el-tooltip content="文档地址" effect="dark" placement="bottom">
          <rou-yi-doc id="rouyi-doc" class="right-menu-item hover-effect"></rou-yi-doc>
       </el-tooltip>
+
+      <screenfull id="screenfull" class="right-menu-item hover-effect"/>
+
+      <el-tooltip content="布局大小" effect="dark" placement="bottom">
+        <size-select id="size-select" class="right-menu-item hover-effect"></size-select>
+      </el-tooltip>
+
+      <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click">
+        <div class="avatar-wrapper">
+          <img :src="avatar" class="user-avatar">
+          <i class="el-icon-caret-bottom" />
+        </div>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item>个人中心</el-dropdown-item>
+          <el-dropdown-item>布局设置</el-dropdown-item>
+          <el-dropdown-item>退出登录</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
     </div>
   </div>
 </template>
@@ -22,14 +40,17 @@ import Breadcrumb from '@/components/Breadcrumb'
 import RouYiGit from '@/components/RouYi/Git'
 import RouYiDoc from '@/components/RouYi/Doc'
 import Search from '@/components/HeaderSearch'
+import Screenfull from '@/components/Screenfull'
+import SizeSelect from '@/components/SizeSelect'
 
 
 import { mapGetters } from 'vuex'
 export default {
-    components: {Hamburger, Breadcrumb,RouYiGit,RouYiDoc,Search},
+    components: {Hamburger, Breadcrumb,RouYiGit,RouYiDoc,Search, Screenfull, SizeSelect},
     computed: {
         ...mapGetters([
-            'sidebar'
+            'sidebar',
+            'avatar'
         ]),
         topNav: {
             get() {

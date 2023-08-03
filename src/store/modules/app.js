@@ -5,7 +5,8 @@ const state = {
         opened: Cookies.get('sidebarStatus') ? !! + Cookies.get('sidebarStatus') : true,
         withoutAnimation: false,
         hide: false
-    }
+    },
+    size: Cookies.get('size') || 'medium'
 }
 
 const actions = {
@@ -14,6 +15,9 @@ const actions = {
     },
     toggleSideBarHide({ commit }, status){
         commit('SET_SIDEBAR_HIDE', status)
+    },
+    setSize({commit}, size){
+        commit('SET_SIZE', size)
     }
 }
 
@@ -32,6 +36,10 @@ const mutations = {
     },
     SET_SIDEBAR_HIDE: (state, status) => {
         state.sidebar.hide = status
+    },
+    SET_SIZE: (state, size) => {
+        state.size = size
+        Cookies.set('size', size)
     }
 }
 

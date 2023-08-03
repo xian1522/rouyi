@@ -108,7 +108,6 @@ export default {
     generatesRoutes(routes, basePath = '/',preFixTitle = []){
         let res = []
         for(const router of routes){
-
             if(router.hidden) {continue}
 
             const data = {
@@ -125,7 +124,7 @@ export default {
 
             if(router.children){
                 const tempRoutes = this.generatesRoutes(router.children, data.basePath, data.title)
-                if(tempRoutes.length > 1){
+                if(tempRoutes.length >= 1){
                     res = [...res, ...tempRoutes]
                 }
             }

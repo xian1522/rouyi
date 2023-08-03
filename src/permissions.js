@@ -7,6 +7,7 @@ const whiteList = ['/login', '/register']
 
 //路由前置守卫
 router.beforeEach((to, from, next) => {
+    console.log('router.beforeEach' + to.fullPath)
     if (getToken()) {
         if(store.getters.roles.length === 0){
             isRelogin.show = true
