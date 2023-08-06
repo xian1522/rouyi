@@ -121,9 +121,8 @@ export default {
                     res.push(data)
                 }
             }
-
             if(router.children){
-                const tempRoutes = this.generatesRoutes(router.children, data.basePath, data.title)
+                const tempRoutes = this.generatesRoutes(router.children, data.path, data.title)
                 if(tempRoutes.length >= 1){
                     res = [...res, ...tempRoutes]
                 }
