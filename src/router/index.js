@@ -37,6 +37,25 @@ export const constantRoutes = [
         component: () => import('@/views/login'),
         name: 'login',
         hidden: true
+    },
+    {
+        path: '/404',
+        hidden: true,
+        component: () => import('@/views/error/404')
+    },
+    {
+        path: '/user',
+        component: Layout,
+        hidden: true,
+        redirect: "noredirect",
+        children:[
+            {
+                path:'profile',
+                component: () => import('@/views/system/user/profile/index'),
+                name: 'Profile',
+                meta: {title: '个人中心', icon: 'user'}
+            }
+        ]
     }
 ]
 

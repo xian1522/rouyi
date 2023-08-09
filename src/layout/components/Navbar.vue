@@ -24,7 +24,9 @@
           <i class="el-icon-caret-bottom" />
         </div>
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item>个人中心</el-dropdown-item>
+          <router-link to="/user/profile">
+            <el-dropdown-item>个人中心</el-dropdown-item>
+          </router-link>
           <el-dropdown-item>布局设置</el-dropdown-item>
           <el-dropdown-item>退出登录</el-dropdown-item>
         </el-dropdown-menu>
