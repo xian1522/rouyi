@@ -6,6 +6,7 @@
          <div :class="{'fixed-header' : fixedHeader}">
             <navbar/>
          </div>
+         <app-main/>
       </div>
     </el-scrollbar>
   </div>
@@ -13,13 +14,14 @@
 
 <script>
 import { mapState } from 'vuex'
-import { Sidebar,Navbar } from './components'
+import { Sidebar,Navbar,AppMain } from './components'
 
 export default {
   name: 'Layout',
   components: {
     Sidebar,
-    Navbar
+    Navbar,
+    AppMain
   },
   computed: {
     ...mapState({
