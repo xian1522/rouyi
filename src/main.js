@@ -3,6 +3,7 @@ import App from './App.vue'
 import VueMeta from 'vue-meta'
 import store from './store'
 import router from './router'
+import plugins from './plugins'
 import ElementUI from 'element-ui'
 import './assets/styles/element-variables.scss'
 import '@/assets/styles/index.scss'
@@ -19,7 +20,7 @@ const req = require.context('./assets/icons/svg', false, /\.svg$/)
 const requireAll = requireContext => requireContext.keys().map(requireContext)
 requireAll(req)
 
-
+Vue.use(plugins)
 Vue.use(VueMeta)
 Vue.use(ElementUI,{
   size: 'medium'
