@@ -10,7 +10,7 @@
             ref="cropper"
             :img="options.img"
             :info="true"
-            ::autoCrop="options.autoCrop"
+            :autoCrop="options.autoCrop"
             :autoCropWidth="options.autoCropWidth"
             :autoCropHeight="options.autoCropHeight"
             :fixedBox="options.fixedBox"
@@ -109,7 +109,7 @@ export default {
       window.removeEventListener("resize", this.resizeHandler)
     },
     beforeUpload(file) {
-      if(file.type.indexOf("/image") == -1){
+      if(file.type.indexOf("image/") == -1){
         this.$modal.msgError("文件格式错误，请上传图片类型,如：JPG，PNG后缀的文件。")
       }else {
         const reader = new FileReader()
@@ -132,7 +132,7 @@ export default {
     uploadImg() {
       this.$refs.cropper.getCropBlob(data => {
         let formdata = new FormData()
-        formdata.append("avatarFile", data)
+        formdata.append("avatarfile", data)
         uploadAvatar(formdata).then(response => {
           this.open = false
           this.options.img = process.env.VUE_APP_BASE_API + response.imgUrl

@@ -6,7 +6,7 @@ import router from './router'
 import ElementUI from 'element-ui'
 import './assets/styles/element-variables.scss'
 import '@/assets/styles/index.scss'
-import './assets/styles/ruoyi.scss'
+import '@/assets/styles/ruoyi.scss'
 
 import './permissions'
 
