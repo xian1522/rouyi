@@ -81,7 +81,7 @@ export function updateUserPwd(oldPassword, newPassword) {
         newPassword
     }
     return request({
-        url: '/system/user/updatePwd',
+        url: '/system/user/profile/updatePwd',
         method: 'put',
         data: data
     })
